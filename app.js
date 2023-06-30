@@ -12,6 +12,8 @@ app.use(cors({
 
 app.use(express.static(__dirname));
 
+app.use('/public/assets', express.static(path.join(__dirname, 'public', 'assets')));
+
 app.get('/', (req, res) => {
     const page = fs.readFileSync('./public/crossfit.html', "utf-8");
     res.send(page);
